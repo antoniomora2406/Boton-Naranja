@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/*Input*/
+ion-item {
+  position: relative;
+  margin: 10px 25px;
+  --highlight-color-focused: #FF9A2B;
+  --highlight-color-valid: #FF9A2B;
+  --highlight-color-invalid: #FF9A2B;
+}
+
+ion-item::part(native) {
+  background: #FFE5BA;
+  border-color: #FF9A2B;
+  border-width: 3px;
+  border-radius: 10px;
+}
+
+ion-input {
+  color: #000;
+}
+
+ion-label {
+  position: relative;
+  top: 7px;
+  left: 30px;
+  margin-top: 10px;
+}
+
+ion-list {
+  background: transparent;
+}
+
+
+/*Botón*/
+div {
+  position: relative;
+  display: flex;
+  place-content: center;
+}
+
+ion-button {
+  width: 140px;
+  height: 40px;
+  margin: 40px 0;
+  border-radius: 10px;
+}
+
+
+/*Alertas*/
+.error-msg {
+  position: relative;
+  top: -7px;
+  left: -60px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}
+
+.error {
+  position: relative;
+  top: 2px;
+  text-align: left;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}
+
+.msg {
+  position: relative;
+  top: 2px;
+  left: -50px;
+  text-align: left;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}

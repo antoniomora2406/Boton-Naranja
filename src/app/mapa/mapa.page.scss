@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+#mapa-mapbox {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  bottom: 0;
+}
+
+
+/*Botones*/
+.botones {
+  display: flex;
+  place-content: center;
+}
+
+ion-button {
+  margin: 20px;
+  --border-radius: 10px;
+  opacity: 65%;
+}

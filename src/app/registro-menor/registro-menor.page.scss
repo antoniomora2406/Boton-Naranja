@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/*Texto*/
+h1 {
+  position: relative;
+  text-align: center;
+  top: 30px;
+}
+
+p {
+  position: relative;
+  top: 12px;
+  text-align: center;
+  font-size: 15px;
+  margin: 35px;
+}
+
+
+/*Formulario*/
+form {
+  position: relative;
+  margin-top: 2vh;
+  padding: 0 17px;
+}
+
+ion-item {
+  position: relative;
+  margin: 10px 25px;
+  --highlight-color-focused: #FF9A2B;
+  --highlight-color-valid: #FF9A2B;
+  --highlight-color-invalid: #FF9A2B;
+}
+
+ion-item::part(native) {
+  background: #FFE5BA;
+  border-color: #FF9A2B;
+  border-width: 3px;
+  border-radius: 10px;
+}
+
+ion-label {
+  position: relative;
+  top: 10px;
+  left: 30px;
+}
+
+/*Input*/
+ion-input {
+  color: #000;
+}
+
+.mayuscula {
+  text-transform: capitalize;
+}
+
+.cur {
+  text-transform: uppercase;
+}
+
+
+/*Botón*/
+ion-button {
+  position: relative;
+  top: -2vh;
+  height: 30px;
+  float: right;
+  right: 5vh;
+  margin: 25px 0;
+}
+
+/*Alertas*/
+.error-msg {
+  position: relative;
+  top: -10px;
+  left: 5px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+  margin: 0 20px 0 20px;
+}

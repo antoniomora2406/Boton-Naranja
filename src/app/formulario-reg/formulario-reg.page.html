@@ -1,0 +1,172 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary" class="background">
+
+  <h1>Registro</h1>
+
+  <p>Ingrese sus datos.</p>
+
+  <form #formulario="ngForm" [formGroup]="regMenor" (ngSubmit)="submitData()">
+
+    <!--Nombre-->
+    <ion-label color="tertiary">Nombre(s)</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input class="mayuscula" type="name" pattern="[a-zA-Z ]*" [(ngModel)]="nombre" name="nombr" minlength="3" formControlName="nombr"
+        required></ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="nombr.invalid && (nombr.touched || nombr.dirty)">
+      <span *ngIf="nombr.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="nombr.errors?.pattern">*Este campo solo acepta letras.</span>
+    </div>
+    <div class="error-msg" *ngIf="nombr.invalid && (nombr.touched || nombr.dirty)">
+      <span *ngIf="nombr.errors?.minlength">*Nombre muy corto.</span>
+    </div>
+
+    <!--Apellidos-->
+    <ion-label color="tertiary">Apellidos</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input class="mayuscula" type="name" pattern="[a-zA-Z ]*" [(ngModel)]="apellidos" name="apellido" formControlName="apellido"
+        minlength="4" required></ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="apellido.invalid && (apellido.touched || apellido.dirty)">
+      <span *ngIf="apellido.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="apellido.errors?.pattern">*Este campo solo acepta letras.</span>
+    </div>
+    <div class="error-msg" *ngIf="apellido.invalid && (apellido.touched || apellido.dirty)">
+      <span *ngIf="apellido.errors?.minlength">*Apellido muy corto.</span>
+    </div>
+
+    <!--Edad-->
+    <ion-label color="tertiary">Edad</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" name="eda" [(ngModel)]="edad" pattern="[0-9]*" formControlName="eda" min="18" max="99" maxlength="2"
+        minlength="2" required>
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="eda.invalid && (eda.touched || eda.dirty)">
+      <span *ngIf="eda.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="eda.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="error-msg" *ngIf="eda.invalid && (eda.touched || eda.dirty)">
+      <span *ngIf="eda.errors?.minlength">*Ingrese minimo 2 digitos.</span>
+    </div>
+
+    <!--CURP-->
+    <ion-label color="tertiary">CURP</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input class="cur" type="text" name="cur" [(ngModel)]="CURP" pattern="^[a-zA-Z0-9]+$" formControlName="cur" pattern="^[a-zA-Z0-9]+$"
+        maxlength="18" minlength="18" required>
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="cur.invalid && (cur.touched || cur.dirty)">
+      <span *ngIf="cur.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="cur.errors?.minlength">*Ingrese los 18 caracteres de su cur.</span>
+    </div>
+    <div class="error-msg" *ngIf="cur.invalid && (cur.touched || cur.dirty)">
+      <span *ngIf="cur.errors?.pattern">*Este campo solo acepta letras y números.</span>
+    </div>
+
+    <!--Fecha de Nacimiento-->
+    <ion-label color="tertiary">Fecha de Nacimiento</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input min="1950-01-01" max="2022-05-31" type="date" [(ngModel)]="nacimiento" name="born"
+        displayFormat="YYYY-MM-DD" formControlName="born" required></ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="born.invalid && (born.touched || born.dirty)">
+      <span *ngIf="born.errors?.required">*Campo obligatorio.</span>
+    </div>
+
+    <!--Correo electrónico-->
+    <ion-label color="tertiary">Correo Electrónico</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="email" [(ngModel)]="email" pattern="^([a-zA-Z0-9_\-\,]+)@([a-zA-Z0-9_\-\,]+).([a-zA-Z]{2,5})$" name="correo" formControlName="correo" required></ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="correo.invalid && (correo.touched || correo.dirty)">
+      <span *ngIf="correo.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="correo.errors?.pattern">*Ingrese un correo electrónico valido.</span>
+    </div>
+
+    <!--Teléfono-->
+    <ion-label color="tertiary">Teléfono</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" [(ngModel)]="telefono" pattern="[0-9]*" name="phone" formControlName="phone" maxlength="10" minlength="10"
+        required>
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="phone.invalid && (phone.touched || phone.dirty)">
+      <span *ngIf="phone.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="phone.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="error-msg" *ngIf="phone.invalid && (phone.touched || phone.dirty)">
+      <span *ngIf="phone.errors?.minlength">*El numero de teléfono debe tener 10 digitos.</span>
+      <span *ngIf="phone.errors?.maxLength">*El numero de teléfono debe tener 10 digitos.</span>
+    </div>
+
+    <!--Teléfono de Emergencia-->
+    <ion-label color="tertiary">Teléfono de Emergencia</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" [(ngModel)]="emergencyPhone" pattern="[0-9]*" name="telefonoOpc" formControlName="telefonoOpc"
+        maxlength="10" minlength="10" required>
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="telefonoOpc.invalid && (telefonoOpc.touched || telefonoOpc.dirty)">
+      <span *ngIf="telefonoOpc.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="telefonoOpc.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="error-msg" *ngIf="telefonoOpc.invalid && (telefonoOpc.touched || telefonoOpc.dirty)">
+      <span *ngIf="telefonoOpc.errors?.minlength">*El numero de teléfono debe tener 10 digitos.</span>
+      <span *ngIf="telefonoOpc.errors?.maxLength">*El numero de teléfono debe tener 10 digitos.</span>
+    </div>
+
+    <!--Teléfono de Emergencia(opcional)-->
+    <ion-label color="tertiary">Teléfono de Emergencia (Opcional)</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" [(ngModel)]="emergencyPhone2" pattern="[0-9]*" name="telefonoOpc2" formControlName="telefonoOpc2"
+        maxlength="10" minlength="10">
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="telefonoOpc2.invalid && (telefonoOpc2.touched || telefonoOpc2.dirty)">
+      <span *ngIf="telefonoOpc2.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="error-msg" *ngIf="telefonoOpc2.invalid && (telefonoOpc2.touched || telefonoOpc2.dirty)">
+      <span *ngIf="telefonoOpc2.errors?.minlength">*El numero de teléfono debe tener 10 digitos.</span>
+    </div>
+
+    <!--Contraseña-->
+    <ion-label color="tertiary">Contraseña</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="{{showPassword ? 'text' : 'password'}}" [(ngModel)]="contrasena" name="password" formControlName="password" [pattern]="passwordPtn"
+         maxlength="16" minlength="8" required>
+      </ion-input>
+      <ion-button class="ver" slot="end" fill="clear" (click)="togglePasswordVisibility()">
+        <ion-icon class="ojo" name="{{showPassword ? 'eye-outline' : 'eye-off-outline'}}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div class="error-msg" *ngIf="password.invalid && (password.touched || password.dirty)">
+      <span *ngIf="password.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="password.errors?.pattern">*Ingrese una contraseña entre 8 a 16 letras MAYUSCULAS y minusculas, números o caracteres
+        especiales.</span>
+    </div>
+
+    <!--Repita su contraseña-->
+    <ion-label color="tertiary">Confirme su contraseña</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="{{showPassword2 ? 'text' : 'password'}}" [(ngModel)]="confirmContrasena" name="confirmPassword"
+        formControlName="confirmPassword" maxlength="16" minlength="8" required>
+      </ion-input>
+      <ion-button class="ver" slot="end" fill="clear" (click)="togglePasswordVisibility2()">
+        <ion-icon class="ojo" name="{{showPassword2 ? 'eye-outline' : 'eye-off-outline'}}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div class="error-msg" *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)">
+      <span *ngIf="confirmPassword.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="confirmPassword.errors?.checkPasswords">Las contraseñas no coinciden.</span>
+    </div>
+
+  </form>
+
+  <ion-button color="tertiary" type="submit" [disabled]="regMenor.invalid" [routerLink]="['/formulario-reg']">
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+  </ion-button>
+
+</ion-content>

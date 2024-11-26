@@ -1,0 +1,51 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary">
+
+  <img src="assets/nn.svg" alt="arriba">
+
+  <div class="candado">
+    <ion-icon color="tertiary" name="lock-closed-outline"></ion-icon>
+  </div>
+
+  <form #formulario="ngForm" [formGroup]="contrase" (ngSubmit)="submitData()">
+
+    <!--Contraseña-->
+    <ion-label color="tertiary">Contraseña</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="{{showPassword ? 'text' : 'password'}}" [(ngModel)]="contrasena" name="password" formControlName="password" [pattern]="passwordPtn"
+         maxlength="16" minlength="8" required>
+      </ion-input>
+      <ion-button class="ver" slot="end" fill="clear" (click)="togglePasswordVisibility()">
+        <ion-icon class="ojo" name="{{showPassword ? 'eye-outline' : 'eye-off-outline'}}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div class="error-msg" *ngIf="password.invalid && (password.touched || password.dirty)">
+      <span *ngIf="password.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="password.errors?.pattern">*Ingrese una contraseña entre 8 a 16 letras MAYUSCULAS y minusculas, números o caracteres
+        especiales.</span>
+    </div>
+
+    <!--Repita su contraseña-->
+    <ion-label color="tertiary">Confirme su contraseña</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="{{showPassword2 ? 'text' : 'password'}}" [(ngModel)]="confirmContrasena" name="confirmPassword"
+        formControlName="confirmPassword" maxlength="16" minlength="8" required>
+      </ion-input>
+      <ion-button class="ver" slot="end" fill="clear" (click)="togglePasswordVisibility2()">
+        <ion-icon class="ojo" name="{{showPassword2 ? 'eye-outline' : 'eye-off-outline'}}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div class="error-msg" *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)">
+      <span *ngIf="confirmPassword.errors?.required">*Campo obligatorio.</span>
+      <span *ngIf="confirmPassword.errors?.notSame">*Las contraseñas no coinciden.</span>
+    </div>
+  </form>
+
+  <div class="bot">
+    <ion-button shape="round" color="tertiary" type="submit" [disabled]="contrase.invalid">
+      Continuar
+    </ion-button>
+  </div>
+
+</ion-content>

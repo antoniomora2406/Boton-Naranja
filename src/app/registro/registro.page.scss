@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/*Texto*/
+h1 {
+  position: relative;
+  bottom: 15px;
+  display: flex;
+  place-content: center;
+  text-align: center;
+}
+
+#ques {
+  position: relative;
+  text-align: center;
+  opacity: 90%;
+  top: 5px;
+  font-size: 2vh;
+}
+
+.par {
+  position: relative;
+  top: 5vh;
+  text-align: center;
+  font-size: 1.6vh;
+  opacity: 90%;
+  margin: 15px;
+}
+
+
+/*Botón*/
+div {
+  position: relative;
+  display: flex;
+  place-content: center;
+  margin: 25px 0;
+}
+
+ion-button {
+  position: relative;
+  width: auto;
+  height: 40px;
+  place-content: center;
+  display: flex;
+  background: #FFE5BA;
+  --border-style: solid;
+  --border-width: 3px;
+}

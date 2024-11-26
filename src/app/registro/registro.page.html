@@ -1,0 +1,33 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary">
+
+  <img src="/assets/nn.svg" alt="">
+
+  <h1>
+    Registro
+  </h1>
+
+  <p id="ques">
+    ¿Eres mayor de edad?
+  </p>
+
+  <div>
+    <ion-button color="tertiary" fill="outline" [routerLink]="['../formulario-reg']">
+      Soy mayor de edad
+    </ion-button>
+  </div>
+
+  <div>
+    <ion-button color="tertiary" fill="outline" [routerLink]="['../registro-menor']">
+      Soy menor de edad
+    </ion-button>
+  </div>
+
+
+  <p class="par">
+    Para su registro tenga a la mano una identificación oficial,
+    en caso de ser menor de edad la de sus padres o tutor.
+  </p>
+
+</ion-content>

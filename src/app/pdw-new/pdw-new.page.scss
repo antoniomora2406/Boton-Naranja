@@ -1,0 +1,85 @@
+* {
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/*Imagen*/
+.candado {
+  position: relative;
+  place-content: center;
+  display: flex;
+}
+
+ion-icon {
+  font-size: 40px;
+}
+
+
+/*Input*/
+ion-item {
+  position: relative;
+  margin: 10px 25px;
+  --highlight-color-focused: #FF9A2B;
+  --highlight-color-valid: #FF9A2B;
+  --highlight-color-invalid: #FF9A2B;
+}
+
+ion-item::part(native) {
+  background: #FFE5BA;
+  border-color: #FF9A2B;
+  border-width: 2px;
+  border-radius: 10px 10px 5px 5px;
+}
+
+ion-input {
+  color: #000;
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-label {
+  position: relative;
+  top: 7px;
+  left: 30px;
+  margin-top: 10px;
+}
+
+/*Botón*/
+.bot {
+  position: relative;
+  display: flex;
+  place-content: center;
+}
+
+ion-button {
+  position: relative;
+  top: 7px;
+  display: flex;
+  place-content: center;
+}
+
+/*Alertas*/
+.error-msg {
+  position: relative;
+  top: -5px;
+  left: 5px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+  margin: 0 20px 0 20px;
+}
+
+/*Ver contraseña*/
+.ver{
+  position: relative;
+  top: 1px;
+  left: 13px;
+}
+
+.ojo{
+  text-align: center;
+  font-size: 23px;
+  color: #383838;
+  opacity: 80%;
+}

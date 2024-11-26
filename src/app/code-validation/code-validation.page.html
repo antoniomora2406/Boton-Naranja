@@ -1,0 +1,35 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary">
+
+  <img src="assets/nn.svg" alt="">
+
+  <p>Ingrese el código que recibió</p>
+
+
+  <div class="reze">
+    <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="configOptions"></ng-otp-input>
+  </div>
+
+
+  <ng-container *ngIf="codigo">
+    <div class="bot">
+      <ion-button shape="round" [routerLink]="['/pdw-new']" color="tertiary">
+        Continuar
+      </ion-button>
+    </div>
+  </ng-container>
+
+  <div class="reenviar">
+    <a color="" href="#">
+      <ion-icon color="tertiary" name="mail-outline"></ion-icon>
+      Reenviar por correo electrónico
+    </a>
+    <br>
+    <a href="#">
+      <ion-icon color="tertiary" name="chatbubble-outline"></ion-icon>
+      Reenviar por SMS
+    </a>
+  </div>
+
+</ion-content>

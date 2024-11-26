@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/*Icon*/
+
+.ico {
+  position: relative;
+  place-content: center;
+  display: flex;
+  top: 20px;
+}
+
+ion-icon {
+  text-align: center;
+  color: #FF9A2B;
+  font-size: 70px;
+}
+
+/*Texto*/
+
+h1 {
+  position: relative;
+  text-align: center;
+}
+
+/*Botón*/
+
+.boton {
+  position: relative;
+  top: 20px;
+  display: flex;
+  place-content: center;
+  margin: 25px 0;
+}
+
+ion-button {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  place-content: center;
+  display: flex;
+  font-size: 18px;
+  --border-radius: 10px;
+}

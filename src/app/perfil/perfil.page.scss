@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/*Botón atras*/
+.back {
+  margin-left: 15px;
+  margin-top: 45px;
+  text-align: center;
+  width: auto;
+  height: 40px;
+  opacity: 80%;
+}
+
+.arrow {
+  color: #FFE5BA;
+  font-size: 2vh;
+}
+
+
+/*Botón entrar*/
+ion-button {
+  width: 140px;
+  height: 40px;
+  font-size: 15px;
+  margin: 40px 0;
+  border-radius: 10px;
+}
+
+
+/*Input*/
+ion-list {
+  position: relative;
+  top: 50px;
+  background: transparent;
+}
+
+ion-item {
+  position: relative;
+  margin-top: 30px;
+  width: 300px;
+  left: 20px;
+  display: flex;
+  --highlight-color-focused: #FF9A2B;
+  --highlight-color-valid: #FF9A2B;
+  --highlight-color-invalid: #FF9A2B;
+}
+
+ion-item::part(native) {
+  background: #FFE5BA;
+  border-color: #FF9A2B;
+  border-width: 3px;
+  border-radius: 10px;
+}
+
+ion-input {
+  color: #000;
+}
+
+ion-label {
+  position: relative;
+  top: 25px;
+  left: 25px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+div {
+  position: relative;
+  top: 5vh;
+  display: flex;
+  place-content: center;
+}
+
+/*Editar*/
+.icon {
+  position: relative;
+  float: right;
+  top: -45px;
+  right: 50px;
+}
+
+ion-icon {
+  text-align: center;
+  font-size: 30px;
+  color: #FF9A2B;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/*Alertas*/
+.error-msg {
+  position: relative;
+  top: 2px;
+  left: -65px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+  text-align: left;
+}
+
+.msg {
+  position: relative;
+  top: 2px;
+  left: -45px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}
+
+.error {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}
+
+.error2 {
+  position: relative;
+  top: 2px;
+  left: -25px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}
+
+.num {
+  position: relative;
+  top: 2px;
+  left: 20px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}
+
+.num1 {
+  position: relative;
+  top: 2px;
+  left: 25px;
+  padding: 0;
+  color: #D90429;
+  font-size: 12px;
+}

@@ -1,0 +1,27 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary">
+
+  <ion-button class="perfil" color="warning" [routerLink]="['/perfil']">
+    <ion-label>
+      <ion-icon class="people" name="person-outline" color="dark"></ion-icon>
+    </ion-label>
+  </ion-button>
+
+  <div class="tep">
+    <img src="/assets/logos_Tepeaca.svg" alt="Logo Tepeaca">
+  </div>
+
+  <div class="content">
+    <ion-button id="police" (click)="presentToast()" [routerLink]="['/mapa']">
+      <img class="bot" src="/assets/police.svg" alt="">
+    </ion-button>
+  </div>
+
+  <div class="content">
+    <ion-button id="paramedico" (click)="presentToast()" [routerLink]="['/mapa']">
+      <img class="bot" src="/assets/ambulance.svg" alt="">
+    </ion-button>
+  </div>
+
+</ion-content>

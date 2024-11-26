@@ -1,0 +1,94 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary">
+
+  <ion-button class="back" color="tertiary" type="submit" [routerLink]="['/botones']">
+    <ion-icon class="arrow" name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  <form #formulario="ngForm" [formGroup]="cambios" (ngSubmit)="submitData()">
+
+    <!--Correo electrónico-->
+    <ion-label color="tertiary">Correo electrónico</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="email" [(ngModel)]="correo" name="mail" formControlName="mail" required></ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="mail.invalid && (mail.touched || mail.dirty)">
+      <span class="msg" *ngIf="mail.errors?.required">*Campo obligatorio.</span>
+      <span class="error" *ngIf="mail.errors?.email">*Ingrese un correo electrónico valido.</span>
+    </div>
+    <div class="icon">
+      <a href="#">
+        <ion-icon name="create-outline"></ion-icon>
+      </a>
+    </div>
+
+    <!--Número de Teléfono-->
+    <ion-label color="tertiary">Teléfono</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" [(ngModel)]="telefono" name="tel" formControlName="tel" maxlength="10" minlength="10"
+        required>
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="tel.invalid && (tel.touched || tel.dirty)">
+      <span class="msg" *ngIf="tel.errors?.required">*Campo obligatorio.</span>
+      <span class="num" *ngIf="tel.errors?.minlength">*El numero de teléfono debe tener 10 digitos.</span>
+      <span *ngIf="tel.errors?.maxLength">*El numero de teléfono debe tener 10 digitos.</span>
+    </div>
+    <div class="error-msg" *ngIf="tel.invalid && (tel.touched || tel.dirty)">
+      <span class="error2" *ngIf="tel.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="icon">
+      <a href="#">
+        <ion-icon name="create-outline"></ion-icon>
+      </a>
+    </div>
+
+    <!--Teléfono de Emergencia-->
+    <ion-label color="tertiary">Teléfono de Emergencia</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" [(ngModel)]="telefonoEmer" name="telOp" formControlName="telOp" maxlength="10" minlength="10"
+        required>
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="telOp.invalid && (telOp.touched || telOp.dirty)">
+      <span class="msg" *ngIf="telOp.errors?.required">*Campo obligatorio.</span>
+      <span class="num" *ngIf="telOp.errors?.minlength">*El numero de teléfono debe tener 10 digitos.</span>
+      <span *ngIf="telOp.errors?.maxLength">*El numero de teléfono debe tener 10 digitos.</span>
+    </div>
+    <div class="error-msg" *ngIf="telOp.invalid && (telOp.touched || telOp.dirty)">
+      <span class="error2" *ngIf="telOp.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="icon">
+      <a href="#">
+        <ion-icon name="create-outline"></ion-icon>
+      </a>
+    </div>
+
+    <!--Teléfono de Emergencia (Opcional)-->
+    <ion-label color="tertiary">Teléfono de Emergencia (Opcional)</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="text" [(ngModel)]="telefonoEmer2" name="telOp2" formControlName="telOp2" maxlength="10" minlength="10">
+      </ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="telOp2.invalid && (telOp2.touched || telOp2.dirty)">
+      <span class="error2" *ngIf="telOp2.errors?.pattern">*Ingrese un número valido.</span>
+    </div>
+    <div class="error-msg" *ngIf="telOp2.invalid && (telOp2.touched || telOp2.dirty)">
+      <span class="num1" *ngIf="telOp2.errors?.minlength">*El numero de teléfono debe tener 10 digitos.</span>
+    </div>
+    <div class="icon">
+      <a href="#">
+        <ion-icon name="create-outline"></ion-icon>
+      </a>
+    </div>
+
+  </form>
+
+  <div>
+    <ion-button color="tertiary" type="submit" [disabled]="cambios.invalid">
+      Guardar
+    </ion-button>
+  </div>
+
+</ion-content>

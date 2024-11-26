@@ -1,0 +1,29 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<ion-content color="primary">
+
+  <img src="assets/nn.svg" alt="">
+
+  <form #formulario="ngForm" [formGroup]="registro" (ngSubmit)="submitData()">
+
+    <!--Correo electrónico-->
+    <ion-label color="tertiary">Correo Electrónico</ion-label>
+    <ion-item fill="outline" color="primary">
+      <ion-input type="email" [(ngModel)]="correo" name="mail" formControlName="mail" required></ion-input>
+    </ion-item>
+    <div class="error-msg" *ngIf="mail.invalid && (mail.touched || mail.dirty)">
+      <span class="msg" *ngIf="mail.errors?.required">*Campo obligatorio.</span>
+      <span class="error" *ngIf="mail.errors?.email">*Ingrese un correo electrónico valido.</span>
+    </div>
+
+  </form>
+
+
+  <div>
+    <ion-button shape="round" color="tertiary" [routerLink]="['/code-validation']" type="submit"
+      [disabled]="formulario.invalid">
+      Entrar
+    </ion-button>
+  </div>
+
+</ion-content>

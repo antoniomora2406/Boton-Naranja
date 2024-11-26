@@ -1,0 +1,8 @@
+{
+  "name": "Botón Naranja",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

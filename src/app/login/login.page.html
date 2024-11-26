@@ -1,0 +1,61 @@
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffe5ba" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ffe5ba" />
+
+<ion-content class="contenedor" color="primary">
+
+  <img src="assets/nn.svg" alt="">
+
+  <h1>Bienvenido</h1>
+
+  <form #formulario="ngForm" [formGroup]="login" (ngSubmit)="submitData()">
+
+    <ion-list>
+      <!--CURP-->
+      <ion-item fill="outline" color="primary">
+        <img class="ico" src="https://img.icons8.com/windows/32/FF9A2B/gender-neutral-user.png" />
+        <ion-input placeholder="CURP" class="cur" type="text" name="CURP" [(ngModel)]="cur" formControlName="CURP"
+          pattern="^[a-zA-Z0-9]+$" maxlength="18" minlength="18" required>
+        </ion-input>
+      </ion-item>
+      <div class="error-msg" *ngIf="CURP.invalid && (CURP.touched || CURP.dirty)">
+        <span *ngIf="CURP.errors?.required">*Campo obligatorio.</span>
+        <span *ngIf="CURP.errors?.minlength">*Ingrese los 18 caracteres de su CURP.</span>
+      </div>
+      <div class="error-msg" *ngIf="CURP.invalid && (CURP.touched || CURP.dirty)">
+        <span *ngIf="CURP.errors?.pattern">*Este campo solo acepta letras y números.</span>
+      </div>
+
+      <!--Contraseña-->
+      <ion-item fill="outline" color="primary">
+        <img class="ico" src="https://img.icons8.com/ios/50/FF9A2B/lock-2.png" />
+        <ion-input class="cont" type="{{showPassword ? 'text' : 'password'}}" type="password" placeholder="Contraseña" name="contra" [(ngModel)]="password"
+          formControlName="contra" maxlength="16" minlength="8" required>
+        </ion-input>
+        <ion-button class="ver" slot="end" fill="clear" (click)="togglePasswordVisibility()">
+          <ion-icon class="ojo" name="{{showPassword ? 'eye-outline' : 'eye-off-outline'}}"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+  </form>
+
+  <a class="reze" [routerLink]="['/recuperar-con']">
+    Olvide mi contraseña
+  </a>
+
+  <div>
+    <ion-button color="tertiary" type="submit" [routerLink]="['/botones']" [disabled]="login.invalid">
+      Entrar
+    </ion-button>
+  </div>
+
+  <div class="footer">
+    <p>
+      ¿No tienes una cuenta?
+      <span (click)="openRegister()">Registrate</span>
+    </p>
+  </div>
+
+</ion-content>
